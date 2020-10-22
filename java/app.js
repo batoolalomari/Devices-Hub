@@ -1,7 +1,7 @@
 'use strict';
 var form=document.getElementById('form');
 var table=document.getElementById('table');
-
+var p=document.getElementById('total');
 var head=["Device Name","Quentity","Unit Price","Device Category"];
 
 function tableHead(){
@@ -41,7 +41,8 @@ Device.prototype.generateRandomDevicePrice=function()
 {
 
     var rand=Math.floor(350+Math.random()*(750-350));
-    totalPrice+=rand;
+   totalPrice+=Number(this.random*this.quantity);
+   console.log(totalPrice);
     this.random.push(rand);
 
 };
@@ -50,38 +51,32 @@ Device.prototype.generateRandomDevicePrice=function()
 Device.prototype.render=function(){
 
     var tr1=document.createElement('tr');
+    table.appendChild(tr1);
     var td=document.createElement('td');
   
     td.textContent=this.name;
     tr1.appendChild(td);
 
-    var tr2=document.createElement('tr');
-    
+   
     var td1=document.createElement('td');
     td1.textContent=this.quentity;
-    tr2.appendChild(td1);
+    tr1.appendChild(td1);
 
-    var tr3=document.createElement('tr');
-  
+   
    var td2=document.createElement('td');
     td2.textContent=this.random;
-    tr3.appendChild(td2);
+    tr1.appendChild(td2);
 
 
-    var tr4=document.createElement('tr');
-  
    var td3=document.createElement('td');
     td3.textContent=this.category;
-    tr4.appendChild(td3);
+    tr1.appendChild(td3);
 
 
 
 
 };
 
-/*var newDevice=new Device('Iphone','mobile','1');
-newDevice.generateRandomDevicePrice();
-newDevice.render();*/
 
 form.addEventListener('submit',addDevice);
 
@@ -97,6 +92,7 @@ function addDevice(event){
 
     newDevice.generateRandomDevicePrice();
     newDevice.render();
+    totalOfPrice();
 
     localStorage.setItem('Devices',JSON.stringify(allDevice));
 
@@ -106,9 +102,16 @@ function addDevice(event){
 
 tableHead();
 
-for (var index = 0; index < allDevice.length; index++) {
-    document.getElementById('total').textContent=Number(totalPrice);
+function totalOfPrice()
+{
+/*for (var index = 0; index < allDevice.length; index++) {
+    totalPrice+=Number((allDevice[index].rand*allDevice[index].quantity));
+   
+}*/
+p.textContent="Total "+Number(totalPrice);
 }
+
+totalOfPrice();
 
 for (var i = 0; i < allDevice.length; i++) {
     allDevice[i].generateRandomDevicePrice();

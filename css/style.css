@@ -1,32 +1,25 @@
 body{
     
     background-repeat: no-repeat;
-    background-image: url("https://live.staticflickr.com/1612/26043164862_6088a72a06_c.jpg");
+    background-image: url("background.jpg");
     background-size: cover;
     position: relative;
     top: 0;
    
 }
 
-/*table{
-    border:3px;
-    border-color:  #C0C0C0;
-    border-style: solid;
-    border-collapse: collapse;
-    background-color: #C0C0C0;
-    border-collapse: collapse;
-}*/
 
 tr , td,th  {
-    border: 5px;
-    border-color: #C0C0C0;
+    border: 1px;
+    background-color: rgba(255, 255, 255, 0.945);
     border-style: solid;
+    color: black;
     border-collapse: collapse;
     
 }
 
 div{
-    background-color: gray;
+    background-color: rgb(105, 105, 105);
     width: 100%;
     position: relative;
     bottom: 20px;
@@ -44,47 +37,62 @@ h2{
 }
 
 fieldset{
-    margin-left: 2pc;
-    background-color: #C0C0C0;
-    width: 100px;
+    margin-left: 8pc;
+    background-color: #c0c0c0be;
+    width: 200px;
+    text-align: center;
+    border-style: none;
+    border-radius: 10px;
     height: 300px;
     margin-top: 5px;
-    padding-top: 5px;
+    padding-top: 2pc;
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
 form{
     padding-top: 5px;
     margin-top: 5px;
+  
 }
 
 table{
-    margin-left: 30pc;
-    background-color: gray;
+    margin-left: 6pc;
     width: 500px;
     height: 100px;
-    border:3px;
-    border-color:  #C0C0C0;
+    color: rgba(255, 254, 254, 0.61);
+    border:3pc;
     border-style: solid;
     border-collapse: collapse;
-    
-    border-collapse: collapse;
+   
 }
+p{
+    margin-left: 30pc;
+    color: rgba(255, 254, 254, 0.61);
+    position: absolute;
 
+}
 span{
     display: inline-flex;
     padding: 2pc;
     padding-left: 5pc;
 }
 
-input[type=text] {
-    width: 200px;
-    padding: 10px 30px;
+input[type=text] ,select {
     border-radius: 3px;
     margin: 8px 0;
     box-sizing: border-box;
-    margin-top: 20px;
+    width: 160px;
+    line-height: normal;
   }
+label{
+    padding: 10px 30px;
+    margin: 8px 0;
+    margin-top: 20px;
+    padding-bottom: 20px;
 
+}
   button{
      background-color: gray;
      padding-left: 20px;
